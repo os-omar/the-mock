@@ -14,7 +14,7 @@ const rootController = require('./src/controllers/rootController');
 
 let headers = {};
 app['setConfig'] = (configFileName) => {
-    const config = require(`./${configFileName}`);
+    const config = require(`../../${configFileName}`);
     // setting db connection - config
     const db = config && config['db'] ? config['db'] : {};
     mongoose.connect(db.url, db.options)
@@ -41,10 +41,10 @@ app.use((req, res, next) => {
 
 
 // using jquery & jquery.json-viewer in views 
-app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
-app.use(express.static(path.join(__dirname, 'node_modules/jquery.json-viewer/json-viewer')));
-app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
-app.use(express.static(path.join(__dirname, 'node_modules/open-iconic/font')));
+app.use(express.static(path.join(__dirname, '../jquery/dist')));
+app.use(express.static(path.join(__dirname, '../jquery.json-viewer/json-viewer')));
+app.use(express.static(path.join(__dirname, '../bootstrap/dist/css')));
+app.use(express.static(path.join(__dirname, '../open-iconic/font')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // seting view engine
