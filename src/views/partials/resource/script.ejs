@@ -1,0 +1,120 @@
+<script type='text/javascript'>
+    // for listing all resources
+    $(document).ready(function () {
+
+        const resources =<%- JSON.stringify(resources) %>;
+        if (!resources || !resources.length) {
+            $("#resourceList").append(
+                "<div class='col-6 text-center'>No Resource found for this path, " +
+                "click on &nbsp <span class='oi oi-plus'></span> &nbsp button to create one.</div>"
+            );
+        }
+        for (var i = 0; i < resources.length; i = i + 1) {
+            $("#resourceList").append(
+                "<div class='col-4'> <a class='confirm-delete-resource' href='/r/delete/"
+                + resources[i]._id +
+                "'><span class='oi oi-trash'></span></a> | <strong>"
+                + resources[i].method +
+                "</strong> | <pre class='json-renderer"
+                + i +
+                "'></pre> </div>");
+            if (resources[i].reqBody)
+                resources[i].reqBody = JSON.parse(resources[i].reqBody);
+            $('.json-renderer' + i).jsonViewer(resources[i], {
+                collapsed: true,
+                rootCollapsable: false
+            });
+        }
+    });
+</script>
+
+<script type='text/javascript'>
+    // for creating a new resource
+    $(document).ready(function () {
+        $("#cancelResource").hide();
+        $("#resourceForm").hide();
+        $(".error-message").hide();
+        $(".error-message-2").hide();
+        $(".error-message-3").hide();
+        prettyPrint();
+        function prettyPrint() {
+            try {
+                var ugly = document.getElementById('create-new-resource').value;
+                var obj = JSON.parse(ugly);
+                var pretty = JSON.stringify(obj, undefined, 4);
+                document.getElementById('create-new-resource').value = pretty;
+            } catch (e) {
+                $(".error-message").show();
+                $("#create-new-resource").addClass("is-invalid");
+                $("#submit").attr("disabled", true);
+                $('#pretty').attr("disabled", true);
+            }
+        }
+        $('#create-new-resource').bind('input', function () {
+            const myCurrentTextArea = document.getElementById('create-new-resource').value;
+            try {
+                $("#newResourceLabel").show();
+                checkedjson = JSON.parse(myCurrentTextArea)
+                checkedjson
+                    ? $(".error-message").hide() && $("#create-new-resource").removeClass("is-invalid")
+                    : $(".error-message").show() && $("#create-new-resource").addClass("is-invalid");
+                let isErrorMessage2Active = false;
+                if (checkedjson['method'] && typeof checkedjson['method'] === 'string') {
+                    $(".error-message-2").hide();
+                    $("#create-new-resource").removeClass("is-invalid");
+                }
+                else {
+                    $(".error-message-2").show();
+                    $("#newResourceLabel").hide();
+                    $("#create-new-resource").addClass("is-invalid");
+                    isErrorMessage2Active = true;
+                }
+                if (checkedjson['method'] && checkedjson['method'].length
+                    && (checkedjson['method'].toUpperCase() === 'GET'
+                        || checkedjson['method'].toUpperCase() === 'DELETE')
+                    && checkedjson['reqBody']) {
+                    $(".error-message-3").show();
+                    $("#newResourceLabel").hide();
+                    $("#create-new-resource").addClass("is-invalid");
+                }
+                else {
+                    isErrorMessage2Active ? $(".error-message-3").hide() : $(".error-message-3").hide() && $("#create-new-resource").removeClass("is-invalid");
+                }
+                $('.error-message').is(":visible")
+                    || $('.error-message-2').is(":visible")
+                    || $('.error-message-3').is(":visible")
+                    ? $("#submit").attr("disabled", true)
+                    : $("#submit").attr("disabled", false);
+
+                $('.error-message').is(":visible")
+                    ? $('#pretty').attr("disabled", true)
+                    : $('#pretty').attr("disabled", false);
+            } catch (e) {
+                $(".error-message").show();
+                $("#newResourceLabel").hide();
+                $("#create-new-resource").addClass("is-invalid");
+                $("#submit").attr("disabled", true);
+                $('#pretty').attr("disabled", true);
+            }
+        });
+
+        $('#pretty').click(function (e) {
+            e.preventDefault();
+            prettyPrint();
+        });
+
+        $('#newResource').click(function () {
+            $("#newResource").hide();
+            $("#cancelResource").show();
+            $("#resourceForm").show();
+        });
+        $('#cancelResource').click(function () {
+            $("#newResource").show();
+            $("#cancelResource").hide();
+            $("#resourceForm").hide();
+        });
+        $(".confirm-delete-resource").click(function () {
+            return confirm("Deleting this resource, are you sure?") ? true : false;
+        });
+    });
+</script>

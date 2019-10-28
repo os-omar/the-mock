@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-12 ml-4">
+        <% if(messages && messages.error) { %>
+        <div class="alert alert-danger" role="alert"><span class="oi oi-x"></span> <%= messages.error %>
+        </div>
+        <% } %>
+        <% if(messages && messages.success) { %>
+        <div class="alert alert-success" role="alert"><span class="oi oi-check"></span> <%= messages.success %>
+        </div>
+        <% } %>
+    </div>
+</div>

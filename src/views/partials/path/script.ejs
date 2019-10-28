@@ -1,0 +1,22 @@
+<script type='text/javascript'>
+    $("#createPath").hide();
+    $("#cancelPath").hide();
+    $("#submit").attr("disabled", true);
+
+    $('#newPath').click(function () {
+        $("#newPath").hide();
+        $("#createPath").show();
+        $("#cancelPath").show();
+    });
+    $('#cancelPath').click(function () {
+        $("#newPath").show();
+        $("#createPath").hide();
+        $("#cancelPath").hide();
+    });
+    $("#path").keyup(function (event) {
+        $("#submit").attr("disabled", !event.target.value.length);
+    });
+    $(".confirm-delete-path").click(function () {
+        return confirm("Deleting this path and all its resources, are you sure?") ? true : false;
+    });
+</script>

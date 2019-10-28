@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        resources
+    </title>
+    <!-- css links -->
+    <% include partials/links %>
+    <link href="/jquery.json-viewer.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- header -->
+    <% include partials/header %>
+
+    <!-- messages, title & resourceForm -->
+    <div class="container pt-5">
+        <!-- server error/success messages -->
+        <% include partials/serverMessages %>
+        <div class="row">
+            <div class="col-1 fs-30 mr-5">
+                Resources
+            </div>
+            <div class="col-1 form-margin ml-1">
+                <button title="create resource" type="button" id="newResource" class="btn btn-sm btn-primary">
+                    <span class="oi oi-plus"></span>
+                </button>
+                <button title="hide form" type="button" id="cancelResource" class="btn btn-sm btn-danger">
+                    <span class="oi oi-x"></span>
+                </button>
+            </div>
+        </div>
+        <div class="row" id="resourceForm">
+            <div class="col-12 ml-4">
+                <label id="newResourceLabel" for="create-new-resource">Create New Resource</label>
+                <div class="text-danger">
+                    <span class="error-message pr-1">Invalid json format,</span>
+                    <span class=" error-message-2 pr-1"><strong>"method"</strong> is required and it must be a string type.</span>
+                    <span class=" error-message-3 pr-1">this <strong>"method"</strong> can't have a
+                        <strong>"reqBody"</strong>.</span>
+                </div>
+                <form action="/r/create" method="post" class="form-inline">
+                    <div class="form-group">
+                        <input type="hidden" name="pathId" value="<%= pathId %>" />
+                        <!-- is-invalid  rows="12"-->
+                        <textarea class="form-control" id="create-new-resource" rows="17" cols="50" name="jsonResource">
+                                    {"method": "POST","headers": {"authorization": "Bearer blahblah"},
+                                    "reqBody": [],"resBody": [],
+                                    "success": {"statusCode": "","message": ""},
+                                    "error": {"statusCode": "","message": "","violations": ""}}
+                            </textarea>
+
+
+                        <button title="submit form" type="submit" id="submit" class="btn btn-sm btn-success ml-3">
+                            <span class="oi oi-check"></span>
+                        </button>
+                        <button title="adjust formart" id="pretty" class="btn btn-sm btn-info ml-1">
+                            <span class="oi oi-code"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-3" id="resourceList"></div>
+    </div>
+
+    <!-- << Back To Paths -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 fs-30">
+                <a href="/p" class="inherit-color">
+                    <span class="oi oi-chevron-left"></span><span class="oi oi-chevron-left"></span>
+                    Back To Paths
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS scripts -->
+    <script src="/jquery.min.js"></script>
+    <script src="/jquery.json-viewer.js"></script>
+    <% include partials/resource/script %>
+
+</body>
+
+</html>
