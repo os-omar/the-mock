@@ -1,0 +1,40 @@
+{
+  "name": "mock-server",
+  "version": "0.0.1",
+  "description": "Create & Delete RESTful API End-Points dynamically from a deployed mock-server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "omarsalim1992/mock-server",
+  "keywords": [
+    "mock",
+    "server",
+    "fake",
+    "REST",
+    "API",
+    "mocking",
+    "test",
+    "testing",
+    "front-end",
+    "dummy",
+    "data"
+  ],
+  "author": "os92 o.salem92@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.7.1",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-session": "^1.16.2",
+    "jquery": "^3.4.1",
+    "jquery.json-viewer": "^1.4.0",
+    "mongoose": "^5.5.12",
+    "morgan": "^1.9.1",
+    "open-iconic": "^1.1.1"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <!-- css links -->
+    <% include partials/links %>
+</head>
+
+<body>
+    <!-- header -->
+    <% include partials/header %>
+
+    <!-- intro -->
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 fs-30">
+                Let's Start
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 fs-20 ml-3">
+                ✧ Create & Delete RESTful API End-Points dynamically from a deployed mock-server ✧
+            </div>
+        </div>
+    </div>
+
+    <!-- title, messages, pathForm & pathList -->
+    <div class="container pt-5">
+        <!-- server error/success messages -->
+        <% include partials/serverMessages %>
+        <div class="row">
+            <div class="col-1 fs-30">
+                <%= title %>
+            </div>
+            <div class="col-1 form-margin ml-1">
+                <button title="create resource" type="button" id="newPath" class="btn btn-sm btn-primary">
+                    <span class="oi oi-plus"></span>
+                </button>
+                <button title="hide form" type="button" id="cancelPath" class="btn btn-sm btn-danger">
+                    <span class="oi oi-x"></span>
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 ml-4">
+                <!-- create a new path -->
+                <form id="createPath" action="/p/create" method="POST" class="form-inline">
+                    <div class="col-6">
+                        <input type="text" name="path" id="path" value="" placeholder="/create/new/path?query=example"
+                            class="max-width form-control form-control-sm" />
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-sm btn-success">
+                        <span class="oi oi-check"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="row ml-4 mt-3">
+            <% if(!pathes || !pathes.length) { %>
+            <div class='col-6 text-center'>No Path found,
+                click on &nbsp <span class='oi oi-plus'></span> &nbsp button to create one.</div>
+            <% } %>
+            <ul class="list-group path-list">
+                <% for(path of pathes) { %>
+                <li class="mb-1">
+                    <a class="confirm-delete-path" href="/p/delete/<%= path._id %>">
+                        <span class="oi oi-trash"></span>
+                    </a> |
+                    <a class="pl-1" href="r/<%= path._id %>"><%= path.path %></a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Documentations -->
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 fs-30">
+                Documentations
+            </div>
+        </div>
+        <div class="row mt-3 ml-3">
+            <div class="col-1">
+                <a href="https://github.com/omarsalim1992/mock-server">README</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS scripts -->
+    <script src="/jquery.min.js"></script>
+    <% include partials/path/script %>
+</body>
+
+</html>

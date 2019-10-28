@@ -1,0 +1,32 @@
+.fs-30 {
+  font-size: 30px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.rel-position {
+  position: relative;
+  top: 4px;
+}
+.oi-trash {
+  color: #dc143c;
+}
+.oi-trash:hover {
+  color: #8b0000;
+}
+.form-margin {
+  margin-top: 10px;
+}
+.path-list li {
+  list-style-type: none;
+}
+.max-width {
+  width: 100% !important;
+}
+#create-new-resource {
+  font: normal 13pt Consolas, Monaco, monospace;
+  background-color: #f5f5f5;
+}
+.inherit-color {
+  color: inherit;
+}
