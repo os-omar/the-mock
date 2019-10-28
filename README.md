@@ -69,7 +69,7 @@ then create resource/s for it e.g: __GET, POST ..etc__
 
 ## Links
 
-[npm package](#)
+[npm package](https://www.npmjs.com/package/the-mock)
 
 ## License
 
