@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "omarsalim1992/mock-server",
+  "repository": "omarsalim1992/the-mock",
   "keywords": [
     "mock",
     "server",
