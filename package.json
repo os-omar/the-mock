@@ -1,6 +1,6 @@
 {
   "name": "the-mock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create & Delete RESTful API End-Points dynamically from a deployed the-mock server",
   "main": "app.js",
   "scripts": {
