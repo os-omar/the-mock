@@ -5,6 +5,7 @@ const Resource = require("../models/resource");
 exports.getAllPaths = (req, res, next) => {
     Path.find()
         .select("_id path")
+        .sort({created_at: 'desc'})
         .exec()
         .then(results => {
             res.render('path', {

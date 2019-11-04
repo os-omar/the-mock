@@ -1,7 +1,6 @@
 const Resource = require("../models/resource");
 const Path = require("../models/path");
 const responseTemplateDto = require('../dto/responsetemplatedto');
-const resTheMockTemplateDto = require('../dto/resthemocktemplatedto');
 
 const compare = (reqValue, dbValue) => {
     return reqValue === dbValue ? true : false;
@@ -29,38 +28,34 @@ exports.compareThenMockRes = (req, res, next) => {
         .exec()
         .then(path => {
             if (!path || !path.length) {
-                return res.status(404).json(responseTemplateDto(null, "Path Not Found!", 404));
+                return res.status(404).json(responseTemplateDto("Path Not Found!"));
             }
             path = path[0];
             Resource.find().where({
                 pathId: path._id,
                 method: method
-            }).select("_id method headers reqBody resBody success error")
+            }).select("_id method headers reqBody success error")
                 .exec()
                 .then(resource => {
                     if (!resource || !resource.length) {
-                        return res.status(404).json(responseTemplateDto(null, "Resource Not Found!", 404));
+                        return res.status(404).json(responseTemplateDto("Resource Not Found!"));
                     }
                     resource = resource[0];
-                    const mockInfo = {
-                        pathId: path._id,
-                        resourceId: resource._id,
-                    }
 
                     if (compare(method, resource.method)
                         && compare(reqBody, resource.reqBody)
                         && compareHeaders(headers, resource.headers)
                     ) {
-                        return res.status(resource.success.statusCode).json(resTheMockTemplateDto(resource.resBody, mockInfo, resource.success.message));
+                        return res.status(resource.success.statusCode).json(resource.success.resBody);
                     } else {
-                        return res.status(resource.error.statusCode).json(resTheMockTemplateDto(null, mockInfo, resource.error.message, resource.error.violations));
+                        return res.status(resource.error.statusCode).json(resource.error.resBody);
                     }
                 }).catch(err => {
                     console.log(err);
-                    res.status(500).json(responseTemplateDto(null, err, 500));
+                    res.status(500).json(responseTemplateDto(err));
                 });
         }).catch(err => {
             console.log(err);
-            res.status(500).json(responseTemplateDto(null, err, 500));
+            res.status(500).json(responseTemplateDto(err));
         });
 }

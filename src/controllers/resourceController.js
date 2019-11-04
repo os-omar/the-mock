@@ -3,10 +3,11 @@ const Resource = require("../models/resource");
 const Path = require("../models/path");
 
 const getHeaders = (headers) => {
-    if (typeof (headers) !== 'object' && typeof (headers) !== 'undefined') {
+    if ((headers && typeof (headers) !== 'object')
+    || Array.isArray(headers)) {
         throw new Error("'headers' type must be an {} Object if exist");
     }
-    if (!headers || (typeof (reqBody) === 'object' && !Object.keys(reqBody).length))
+    if (!headers || (typeof (headers) === 'object' && !Object.keys(headers).length))
         return undefined;
 
     const headerKeys = Object.keys(headers);
@@ -26,23 +27,19 @@ const getReqBody = (reqBody) => {
     return reqBody && typeof (reqBody) === 'object' && Object.keys(reqBody).length ?
         JSON.stringify(reqBody) : undefined;
 };
-const getResBody = (resBody) => {
-    return typeof (resBody) === 'undefined' ? null : resBody;
-};
-const getSuccessRes = (successRes) => {
-    return successRes && successRes.statusCode ?
-        successRes : { statusCode: '200', message: null };
-};
-const getErrorRes = (errorRes) => {
-    return errorRes && errorRes.statusCode ?
-        errorRes : { statusCode: '500', message: null, violations: 500 };
+const getResponse = (res, defaultStatusCode) => {
+    const statusCode = res && res.statusCode
+        ? res.statusCode : defaultStatusCode;
+    const resBody = res ? res.resBody : {};
+    return { statusCode, resBody };
 };
 
 exports.getAllResourcesByPathId = (req, res, next) => {
     Resource.find()
-        .select("_id pathId method headers reqBody resBody success error")
+        .select("_id pathId method headers reqBody success error")
         .where({ pathId: req.params.pathId })
         .populate({ path: 'pathId', select: '_id path' })
+        .sort({created_at: 'desc'})
         .exec()
         .then(results => {
             const pathName = results && results.length ? results[0].pathId['path'] : null;
@@ -81,17 +78,15 @@ exports.createNewResource = (req, res, next) => {
 
                     const headers = getHeaders(jsonResource.headers);
                     const reqBody = getReqBody(jsonResource.reqBody);
-                    const resBody = getResBody(jsonResource.resBody);
-                    const success = getSuccessRes(jsonResource.success);
-                    const error = getErrorRes(jsonResource.error);
-
+                    const success = getResponse(jsonResource.success, '200');
+                    const error = getResponse(jsonResource.error, '500');
+                    
                     const newResource = new Resource({
                         _id: mongoose.Types.ObjectId(),
                         pathId,
                         method,
                         headers,
                         reqBody,
-                        resBody,
                         success,
                         error
                     });
@@ -99,7 +94,7 @@ exports.createNewResource = (req, res, next) => {
 
                 }).then(result => {
                     if (result)
-                        req.flash('success', 'Resource created successfully, Try to call the end-point now');
+                        req.flash('success', 'Resource created successfully, Try calling the end-point using Browser, Postman ..etc');
                     res.redirect('back');
                 }).catch(err => {
                     next(err);

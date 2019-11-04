@@ -1,4 +1,4 @@
-# The-Mock
+# The-Mock [![](https://badge.fury.io/js/the-mock.svg)](http://badge.fury.io/js/the-mock)
 
  Create & Delete REST API End-Points dynamically from a deployed the-mock server.<br />
  Created for both Front-End developers and testers who needs a quick RESTful API back-end solution, in case there is none.<br />
@@ -66,10 +66,6 @@ just navigate to http://localhost:3000, if you run it locally.<br />
 OR to http://your-domain, if the-mock server is deployed online.<br />
 To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
 then create resource/s for it e.g: __GET, POST ..etc__
-
-## Links
-
-[npm package](https://www.npmjs.com/package/the-mock)
 
 ## License
 

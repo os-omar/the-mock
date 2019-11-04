@@ -1,16 +1,19 @@
 <script type='text/javascript'>
     $("#createPath").hide();
+    $("#pathLabel").hide();
     $("#cancelPath").hide();
     $("#submit").attr("disabled", true);
 
     $('#newPath').click(function () {
         $("#newPath").hide();
         $("#createPath").show();
+        $("#pathLabel").show();
         $("#cancelPath").show();
     });
     $('#cancelPath').click(function () {
         $("#newPath").show();
         $("#createPath").hide();
+        $("#pathLabel").hide();
         $("#cancelPath").hide();
     });
     $("#path").keyup(function (event) {
