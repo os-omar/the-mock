@@ -38,22 +38,22 @@
                 <label id="newResourceLabel" for="create-new-resource">Create New Resource</label>
                 <div class="text-danger">
                     <span class="error-message pr-1">Invalid json format,</span>
-                    <span class=" error-message-2 pr-1"><strong>"method"</strong> is required and it must be a string type.</span>
+                    <span class=" error-message-2 pr-1"><strong>"method"</strong> is required and it must be a string
+                        type.</span>
                     <span class=" error-message-3 pr-1">this <strong>"method"</strong> can't have a
                         <strong>"reqBody"</strong>.</span>
                 </div>
                 <form action="/r/create" method="post" class="form-inline">
                     <div class="form-group">
                         <input type="hidden" name="pathId" value="<%= pathId %>" />
-                        <!-- is-invalid  rows="12"-->
+
                         <textarea class="form-control" id="create-new-resource" rows="17" cols="50" name="jsonResource">
-                                    {"method": "POST","headers": {"authorization": "Bearer blahblah"},
-                                    "reqBody": [],"resBody": [],
-                                    "success": {"statusCode": "","message": ""},
-                                    "error": {"statusCode": "","message": "","violations": ""}}
+                                    {"method": "POST","headers": {"authorization": "Bearer fake-jwt"},
+                                    "reqBody": {},
+                                    "success": {"statusCode": "200","resBody": []},
+                                    "error": {"statusCode": "500","resBody": {}}}
                             </textarea>
-
-
+                            
                         <button title="submit form" type="submit" id="submit" class="btn btn-sm btn-success ml-3">
                             <span class="oi oi-check"></span>
                         </button>

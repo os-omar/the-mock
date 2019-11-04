@@ -6,6 +6,7 @@ exports.getAllPaths = (req, res, next) => {
     Path.find()
         .select("_id path")
         .exec()
+        .sort({created_at: 'desc'})
         .then(results => {
             res.render('path', {
                 title: 'Paths',
