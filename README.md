@@ -62,6 +62,7 @@ __Note:__ you can copy this ```config.json```, then only change __db.url__ to li
 
 The-Mock Server is created it using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
 Inside the root project folder create ```server.js``` file:
+__Note:__ copy this ```server.js``` exactly as it's, no need to change anything.
 ```
 // server.js
 const http = require('http');
