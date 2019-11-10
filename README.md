@@ -27,14 +27,15 @@ If you already have a MongoDB, skip to the second step. If not:
 
 Inside the root project folder create ```config.json``` file to link the-mock server with MongoDB<br />
 and to handle CORS issue by passing response headers.<br />
+
 ```config.json``` file contains:
 - __"db"__:
   * __"url"__: here you need your MongoDB URL you just created in Step 1, whether it's from Atlas or local DB.
-  * __options__: an object which will be passed on to your MongoDB driver, it can be blank object though.
+  * __"options"__: an object which will be passed on to your MongoDB driver, it can be blank object though.
 - __"headers"__:
   * __"all"__: response headers for __ALL__ REST Api call.
   * __"options"__: response headers for only __OPTIONS__ method REST Api call.
-  
+
 __Note:__ you can copy this ```config.json```, then only change __db.url__ to link to your db.
 ```
 {
