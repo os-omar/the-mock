@@ -15,12 +15,13 @@ To run The-Mock Server successfully, 3 steps need to be handled.
 ### 1) Create A MongoDB Database
 
 If you already have a MongoDB, skip to the second step. If not: 
-- Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - it's __FREE FOREVER__ when you choose __M0 - Standard RAM & 512MB storage.__ 
+- Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create a DB as a service, it's __FREE FOREVER__ when you choose __M0 - Standard RAM & 512MB storage.__
 - OR [Install MongoDB](https://docs.mongodb.com/v3.2/installation) on your machine to run it locally.
 - __Important Notes:__ 
-  * the-mock server will use both MongoDB models __'p'__ & __'r'__ to store mock data, 
+  * the-mock server will use both MongoDB models __'p'__ & __'r'__ to store mock data.<br /> 
   __'p'__: stands for Paths, while __'r'__: for path Resources.
-  * It's recommeneded to use __MongoDB Atlas__, so the mock data can be shared across F-E development team. Here is the [Atlas Documentation](https://docs.atlas.mongodb.com) explaining how to create one.
+  * It's recommeneded to use __MongoDB Atlas__, so the mock data can be shared across Front-End development team.<br />
+  Here is the [Atlas Documentation](https://docs.atlas.mongodb.com) explaining how to create one.
 
 ### 2) Create a ```config.json``` file
 
