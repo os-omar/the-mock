@@ -1,8 +1,12 @@
 # The-Mock [![](https://badge.fury.io/js/the-mock.svg)](http://badge.fury.io/js/the-mock)
 
 * Create & Delete REST API End-Points dynamically from a deployed the-mock server.
+* First mock server where mocked data are stored in NoSQL "MongoDB" Database and not locally, 
+thus these mocked data are created once and can be shared across all Front-End development team.
+* It is useful for companies which both B-E & F-E teams works parallelly. 
 * Created for both Front-End developers and testers who needs a quick RESTful API back-end solution, in case there is none.
-* No __coding__ involved, it has a nice UI and it can be deployed to an online server.
+* No __coding__ involved, it has a nice UI and with few clicks a mock end-point can be created.
+* It can be deployed to an online server.
 
 ## Getting Started
 
