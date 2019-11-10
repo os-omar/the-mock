@@ -1,8 +1,8 @@
 # The-Mock [![](https://badge.fury.io/js/the-mock.svg)](http://badge.fury.io/js/the-mock)
 
- Create & Delete REST API End-Points dynamically from a deployed the-mock server.<br />
- Created for both Front-End developers and testers who needs a quick RESTful API back-end solution, in case there is none.<br />
- No __coding__ involved, it has a nice UI and it can be deployed to an online server.
+* Create & Delete REST API End-Points dynamically from a deployed the-mock server.
+* Created for both Front-End developers and testers who needs a quick RESTful API back-end solution, in case there is none.
+* No __coding__ involved, it has a nice UI and it can be deployed to an online server.
 
 ## Getting Started
 
