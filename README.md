@@ -61,7 +61,7 @@ __Note:__ you can copy this ```config.json```, then only change __db.url__ to li
 ### 3) Create a ```server.js``` file
 
 The-Mock Server is created it using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
-Inside the root project folder create ```server.js``` file:
+Inside the root project folder create ```server.js``` file:<br />
 __Note:__ copy this ```server.js``` exactly as it's, no need to change anything.
 ```
 // server.js
