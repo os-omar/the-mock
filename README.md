@@ -30,7 +30,7 @@ and to handle CORS issue by passing response headers.<br />
 
 ```config.json``` file contains:
 - __"db"__:
-  * __"url"__: here you need your MongoDB URL you just created in Step 1, whether it's from Atlas or local DB.
+  * __"url"__: here you need to add your MongoDB URL that you just created in Step 1, whether it's from Atlas or local DB.
   * __"options"__: an object which will be passed on to your MongoDB driver, it can be blank object though.
 - __"headers"__:
   * __"all"__: response headers for __ALL__ REST Api call.
