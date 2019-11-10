@@ -25,16 +25,15 @@ If you already have a MongoDB, skip to the second step. If not:
 
 ### 2) Create a ```config.json``` file
 
-Inside the root project folder create ```config.json``` file to link the-mock server with MongoDB<br />
-and to handle CORS issue by passing response headers.<br />
+Inside the root project folder create ```config.json``` file to link the-mock server with MongoDB and to handle CORS issue by passing response headers.<br />
 
 ```config.json``` file contains:
 - __"db"__:
   * __"url"__: here you need to add your MongoDB URL that you just created in Step 1, whether it's from Atlas or local DB.
   * __"options"__: an object which will be passed on to your MongoDB driver, it can be blank object though.
 - __"headers"__:
-  * __"all"__: response headers for __ALL__ REST Api call.
-  * __"options"__: response headers for only __OPTIONS__ method REST Api call.
+  * __"all"__: response headers for __ALL__ REST Api calls.
+  * __"options"__: response headers for only __OPTIONS__ method REST Api calls.
 
 __Note:__ you can copy this ```config.json```, then only change __db.url__ to link to your db.
 ```
@@ -58,6 +57,7 @@ __Note:__ you can copy this ```config.json```, then only change __db.url__ to li
     }
 }
 ```
+
 ### 3) Create a ```server.js``` file
 
 The-Mock Server is created it using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
