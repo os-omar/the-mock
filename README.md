@@ -1,8 +1,8 @@
 # The-Mock [![](https://badge.fury.io/js/the-mock.svg)](http://badge.fury.io/js/the-mock)
 
 * Create & Delete REST API End-Points dynamically from a deployed the-mock server.
-* First mock server where mocked data are stored in NoSQL "MongoDB" Database and not locally, 
-thus these mocked data are created once and can be shared across all Front-End development team.
+* First mock server where mock data are stored in NoSQL "MongoDB" Database and not locally, 
+thus these mock data are created once and can be shared across all Front-End development team.
 * It is useful for companies which both B-E & F-E teams works parallelly. 
 * Created for both Front-End developers and testers who needs a quick RESTful API back-end solution, in case there is none.
 * No __coding__ involved, it has a nice UI and with few clicks a mock end-point can be created.
@@ -14,9 +14,13 @@ To run The-Mock Server successfully, 3 steps need to be handled.
 
 ### 1) Create A MongoDB Database
 
-If you already have a MongoDB, skip to the second step.<br />
-if not, visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - it's free forever when you choose __M0 - Standard RAM & 512MB storage.__<br />
-OR [Install MongoDB](https://docs.mongodb.com/v3.2/installation) on your machine to run locally.
+If you already have a MongoDB, skip to the second step. If not: 
+- Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - it's __FREE FOREVER__ when you choose __M0 - Standard RAM & 512MB storage.__ 
+- OR [Install MongoDB](https://docs.mongodb.com/v3.2/installation) on your machine to run it locally.
+- __Important Notes:__ 
+  * the-mock server will use both MongoDB models __'p'__ & __'r'__ to store mock data, 
+  __'p'__: stands for Paths, while __'r'__: for path Resources.
+  * It's recommeneded to use __MongoDB Atlas__, so the mock data can be shared across F-E development team. Here is the [Atlas Documentation](https://docs.atlas.mongodb.com) explaining how to create one.
 
 ### 2) Create a ```config.json``` file
 
@@ -65,7 +69,7 @@ then run the-mock server by this commad ```node server.js```.
 
 ## The-Mock Server GUI
 
-The-Mock server has a friendly GUI which can easily lead you to create mocked end-points.<br />
+The-Mock server has a friendly GUI which can easily lead you to create mock end-points.<br />
 just navigate to http://localhost:3000, if you run it locally.<br />
 OR to http://your-domain, if the-mock server is deployed online.<br />
 To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
