@@ -124,7 +124,7 @@ __Important Notes:__
 * All form field keys are case-sensitive. Meaning __"method"__ is not equal to __"METHOD"__. In order for the-mock server to work successfully, don't change/add any key names.
 * After creating a resource, try calling the end-point using Browser, Postman ..etc.
 
-## How to achieve a successful/filed response
+## How to achieve a Successful/Failed response
 
 The-Mock server compares request Api call data with the data stored in the-mock database.<br />
 If they are __EXACTLY EQUAL "==="__. The-Mock returns a seccessful response, otherwise it returns a failed response.<br />
