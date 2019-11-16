@@ -132,6 +132,11 @@ In other words:
 * __Successful Response:__ reqData === dbData.
 * __Failed Response:__ reqData !== dbData.
 
+### Examples
+
+| Request Api Call | The-Mock Stored Data | Response | Reason
+| ---- | ---- | ---- | ---- |
+| __value__ | ss1 | ss2 | ss3 | 
 
 ## License
 
