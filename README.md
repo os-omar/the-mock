@@ -61,8 +61,7 @@ __Note:__ you can copy this ```config.json```, then only change __db.url__ to li
 ### 3) Create a ```server.js``` file
 
 The-Mock Server is created it using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
-Inside the root project folder create ```server.js``` file:<br />
-__Note:__ copy this ```server.js``` exactly as it's, no need to change anything.
+Inside the root project folder create ```server.js``` file:
 ```
 // server.js
 const http = require('http');
@@ -82,8 +81,10 @@ then run the-mock server by this commad ```node server.js```.
 ## The-Mock Server GUI
 
 The-Mock server has a friendly GUI which can easily lead you to create mock end-points.<br />
-just navigate to http://localhost:3000, if you run it locally.<br />
-OR to http://your-domain, if the-mock server is deployed online.<br />
+just navigate to:
+* http://localhost:3000, if you run it locally.
+* http://your-domain, if the-mock server is deployed online.
+
 To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
 then create resource/s for it e.g: __GET, POST ..etc__
 
