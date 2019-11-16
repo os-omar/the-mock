@@ -8,6 +8,21 @@ thus these mock data are created once and can be shared across all Front-End dev
 * No __coding__ involved, it has a nice UI and with few clicks a mock end-point can be created.
 * It can be deployed to an online server.
 
+## Table of contents
+
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+  * [1) Create a MongoDB database](#1-create-a-mongodb-database)
+  * [2) Create a ```config.json``` file](#2-create-a-configjson-file)
+  * [3) Create a ```server.js``` file](#3-create-a-serverjs-file)
+- [The-Mock server GUI](#the-mock-server-gui)
+- [Mock Rest Api Creation](#mock-rest-api-creation)
+  * [Create a path](#create-a-path)
+  * [Create a resource](#create-a-resource)
+- [How to achieve a Success/Error response](#how-to-achieve-a-successerror-response)
+  * [Examples](#examples)
+- [License](#license)
+
 ## Installation
 The choice is yours:
 * `npm i the-mock`
