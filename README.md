@@ -137,9 +137,7 @@ In other words:
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
 | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL<br /> "===" | 
-
 | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer blahBlah" } | __path:__ /api/v1.0/posts/1<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __error__ | request __path__ should be /posts/1<br /> request __headers__ sould be { "authrization": "Bearer fake-jwt" } |
-
 | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __success__ | EXACTLY EQUAL<br /> "===" |
 
 ## License
