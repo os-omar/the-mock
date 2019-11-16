@@ -94,11 +94,12 @@ To create an Mock Rest Api successfully, 2 steps need to be handled.
 the path is all your URL except your domain, paths must be unique. exmaples:
 * List: __/api/v1.0/users__
 * Singular: __/api/v1.0/users/12__
-* Query: __/api/v1.0/users?department=EDU&year=1992__
+* Query: __/api/v1.0/users?department=EDU&year=1992__.
+
 __Note:__ 
 * for __Singular Path__ Do not create it like this __/api/v1.0/users/{id}__, 
-as the-mock server reads the end-point exactly as it's. there is no changing in url varibles
-* __/p/*__ & __/r/*__ are reserved paths  
+as the-mock server reads the end-point exactly as it's. there is no changing in url varibles.
+* both __/p/*__ & __/r/*__ are reserved paths and cannot be mock.  
 
 
 To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
