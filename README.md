@@ -136,10 +136,8 @@ In other words:
 
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
-| __path:__ /api/v1.0/posts<br /> 
-__method:__ GET<br />
- | ss1 | ss2 | ss3 | 
-
+| __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL | 
+| __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL | 
 ## License
 
 Code licensed under MIT.
