@@ -136,7 +136,9 @@ In other words:
 
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
-| path: dsdsd<br /> resurce: dsad | ss1 | ss2 | ss3 | 
+| __path:__ /api/v1.0/posts<br /> 
+__method:__ GET<br />
+ | ss1 | ss2 | ss3 | 
 
 ## License
 
