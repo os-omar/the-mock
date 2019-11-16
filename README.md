@@ -82,7 +82,7 @@ then run the-mock server by this commad ```node server.js```.
 
 The-Mock server has a friendly GUI which can easily lead you to create mock end-points.<br />
 just navigate to:
-* http://localhost:3000, if you run it locally.
+* http://localhost:3000, if the-mock server is run locally.
 * http://your-domain, if the-mock server is deployed online.
 
 To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
