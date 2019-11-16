@@ -60,7 +60,7 @@ __Note:__ you can copy this ```config.json```, then only change __db.url__ to li
 
 ### 3) Create a ```server.js``` file
 
-The-Mock Server is created it using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
+The-Mock Server is created using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
 Inside the root project folder create ```server.js``` file:
 ```
 // server.js
@@ -106,20 +106,21 @@ as the-mock server reads the end-point exactly as it's. there is no changing in 
 ### Create a resource
 
 Basically each path has many resources e.g: __GET, POST, PUT, DELETE ..etc__, 
-to create one click on a specific path it will navigate you to Resources page.<br />
-__How to create a resource ?__ when you click on + sign a box will show up that contains of:
- - __"method"__: type __"" sting__ only, and it's required field to fill in.
+and to create one click on a specific path. It will navigate you to Resources page.<br />
+__How to create a resource ?__ when you click on + sign a box will show up that contains:
+ - __"method"__: type __"" sting__ only. It's required field and must be unique.
  - __"headers"__: type  __{} object__ only. It can be an __empty {} object or removed__, if you don't need headers.
  - __"reqBody"__: type __{} object or [] Array__. It can be __Removed__, if you don't need a request body.
  - __"success"__: it's the successful response, which consists of:
-   * __"statusCode"__: type __"" sting or NUM__, it's HTTP response status code.
+   * __"statusCode"__: type __"" sting or integer__, it's HTTP response status code. "200" is the default value.
    * __"resBody"__: type __any__, it's response body data.
  - __"error"__: it's the failed response, which consists of:
-   * __"statusCode"__: type __"" sting or NUM__, it's HTTP response status code.
+   * __"statusCode"__: type __"" sting or integer__, it's HTTP response status code. "500" is the default value.
    * __"resBody"__: type __any__, it's response body data.
 
-To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
-then create resource/s for it e.g: __GET, POST ..etc__
+__Important Notes:__ 
+* Only __"method"__ is required to fill in, and it must be unique. Other fileds can __Removed__.
+* All form fields keys are case-sensitive. Meaning __"method"__ is not equal to __"METHOD"__. In order for the-mock server to work successfully, don't change/add any key names.
 
 ## License
 
