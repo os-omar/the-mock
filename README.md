@@ -8,6 +8,11 @@ thus these mock data are created once and can be shared across all Front-End dev
 * No __coding__ involved, it has a nice UI and with few clicks a mock end-point can be created.
 * It can be deployed to an online server.
 
+## Installation
+the choice is yours:
+* `npm i the-mock`
+* `yarn add the-mock`
+
 ## Getting Started
 
 To run The-Mock Server successfully, 3 steps need to be handled.
