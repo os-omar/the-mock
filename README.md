@@ -9,7 +9,7 @@ thus these mock data are created once and can be shared across all Front-End dev
 * It can be deployed to an online server.
 
 ## Installation
-the choice is yours:
+The choice is yours:
 * `npm i the-mock`
 * `yarn add the-mock`
 
