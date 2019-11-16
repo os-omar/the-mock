@@ -12,9 +12,9 @@ thus these mock data are created once and can be shared across all Front-End dev
 
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-  * [1) Create a MongoDB database](#1-create-a-mongodb-database)
-  * [2) Create a ```config.json``` file](#2-create-a-configjson-file)
-  * [3) Create a ```server.js``` file](#3-create-a-serverjs-file)
+  * [Create a MongoDB database](#create-a-mongodb-database)
+  * [Create a ```config.json``` file](#create-a-configjson-file)
+  * [Create a ```server.js``` file](#create-a-serverjs-file)
 - [The-Mock server GUI](#the-mock-server-gui)
 - [Mock Rest Api Creation](#mock-rest-api-creation)
   * [Create a path](#create-a-path)
@@ -32,7 +32,7 @@ The choice is yours:
 
 To run The-Mock Server successfully, 3 steps need to be handled.
 
-### 1) Create a MongoDB database
+### Create a MongoDB database
 
 If you already have a MongoDB, skip to the second step. If not: 
 - Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create a DB as a service, it's __FREE FOREVER__ when you choose:<br /> __"M0 - Standard RAM & 512MB storage"__.
@@ -43,7 +43,7 @@ If you already have a MongoDB, skip to the second step. If not:
   * It's recommeneded to use __MongoDB Atlas__, so the mock data can be shared across Front-End development team.<br />
   Here is the [Atlas Documentation](https://docs.atlas.mongodb.com) explaining how to create one.
 
-### 2) Create a ```config.json``` file
+### Create a ```config.json``` file
 
 Inside the root project folder create ```config.json``` file to link the-mock server with MongoDB and to handle CORS issue by passing response headers.<br />
 
@@ -78,7 +78,7 @@ __Note:__ you can copy this ```config.json```, then only change __db.url__ to li
 }
 ```
 
-### 3) Create a ```server.js``` file
+### Create a ```server.js``` file
 
 The-Mock Server is created using [Express JS](https://expressjs.com/), thus it needs a starting point to run.<br />
 Inside the root project folder create ```server.js``` file:
