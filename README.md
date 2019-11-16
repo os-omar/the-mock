@@ -141,7 +141,7 @@ __How to create a resource ?__ when you click on + sign a box will show up that 
 
 __Important Notes:__ 
 * Only __"method"__ is required to fill in, and it must be unique. Other fileds can be __Removed__.
-* Create resource form must be valid JSON format.
+* Create resource form must be a valid JSON format.
 * All form field keys are case-sensitive. Meaning __"method"__ is not equal to __"METHOD"__. In order for the-mock server to work successfully, don't change/add any key names.
 * After creating a resource, try calling the end-point using Browser, Postman ..etc.
 
