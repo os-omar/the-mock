@@ -137,8 +137,8 @@ In other words:
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
 | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL __"==="__ | 
-| __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer blahBlah" } | __path:__ /api/v1.0/posts/1<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __error__ | request __path__ should be __/posts/1__<br /> request __headers__ sould be __{ "authrization": "Bearer fake-jwt" }__ |
-| __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __success__ | EXACTLY EQUAL __"==="__ |
+| __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer blahBlah" } | __path:__ /api/v1.0/posts/1<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer fake-jwt" } | __error__ | request __path__ should be __/posts/1__<br /> request __headers__ sould be __{ "authorization": "Bearer fake-jwt" }__ |
+| __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer fake-jwt" } | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer fake-jwt" } | __success__ | EXACTLY EQUAL __"==="__ |
 
 ## License
 
