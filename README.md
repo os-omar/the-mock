@@ -136,8 +136,9 @@ In other words:
 
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
-| __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL | 
-| __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL | 
+| __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts<br /> __method:__ GET<br /> __headers:__ {} | __success__ | EXACTLY EQUAL<br /> "===" | 
+| __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authrization": "Bearer fake-jwt" } | __success__ | EXACTLY EQUAL<br /> "===" |
+ 
 ## License
 
 Code licensed under MIT.
