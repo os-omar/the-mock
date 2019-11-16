@@ -109,14 +109,14 @@ Basically each path has many resources e.g: __GET, POST, PUT, DELETE ..etc__,
 to create one click on a specific path it will navigate you to Resources page.<br />
 __How to create a resource ?__ when you click on + sign a box will show up that contains of:
  - __"method"__: type __"" sting__ only, and it's required field to fill in.
- - __"headers"__: type  __{} object__ only. It can be an __empty {} object__, if you don't need headers.
- - __"reqBody"__: type __{} object or [] Array__ depends on the request body you want to send.
- - __"success"__: it's the successful response, which contains of:
+ - __"headers"__: type  __{} object__ only. It can be an __empty {} object or removed__, if you don't need headers.
+ - __"reqBody"__: type __{} object or [] Array__. It can be __Removed__, if you don't need a request body.
+ - __"success"__: it's the successful response, which consists of:
    * __"statusCode"__: type __"" sting or NUM__, it's HTTP response status code.
-   * __"resBody"__: type __any__, it's response Body data.
- - __"error"__: it's the failed response, which contains of:
+   * __"resBody"__: type __any__, it's response body data.
+ - __"error"__: it's the failed response, which consists of:
    * __"statusCode"__: type __"" sting or NUM__, it's HTTP response status code.
-   * __"resBody"__: type __any__, it's response Body data.
+   * __"resBody"__: type __any__, it's response body data.
 
 To create an end-point first create a path e.g: __/the-mock/server?name=os__<br />
 then create resource/s for it e.g: __GET, POST ..etc__
