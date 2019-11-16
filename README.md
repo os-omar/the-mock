@@ -118,7 +118,7 @@ The path is all your URL except your domain, paths must be unique. exmaples:
 * Query: __/api/v1.0/users?department=EDU&year=1992__.
 
 __Important Notes:__ 
-* For a __Singular Path__, do not create it like this: __/api/v1.0/users/{id}__, 
+* For a __Singular Path__, avoid this format: __/api/v1.0/users/{id}__, 
 as the-mock server reads the end-point exactly as it's. there is no changing in path's variables.
 * Both __/p/*__ & __/r/*__ are reserved paths and cannot be mock.
 * To call your end-point: http://your-domain/your-path. e.g: __http://localhost:3000/api/v1.0/users/12__
