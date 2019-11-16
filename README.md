@@ -126,10 +126,11 @@ __Important Notes:__
 
 ## How to achieve a successful/filed response
 
-The-Mock server compares both request Api call data with the data sotred in the-mock database. if they are __EXACTLY EQUAL "==="__. The-Mock returns a seccessful response, otherwise it returns a failed response.<br />
+The-Mock server compares request Api call data with the data stored in the-mock database.<br />
+If they are __EXACTLY EQUAL "==="__. The-Mock returns a seccessful response, otherwise it returns a failed response.<br />
 In other words:
-* Successful Response: reqData === dbData.
-* Failed response:  reqData !== dbData.
+* __Successful Response:__ reqData === dbData.
+* __Failed Response:__ reqData !== dbData.
 
 
 ## License
