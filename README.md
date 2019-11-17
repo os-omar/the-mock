@@ -153,7 +153,7 @@ In other words:
 * __Successful Response:__ reqData === dbData.
 * __Error Response:__ reqData !== dbData.
 
-### Examples
+###  Success/Error Examples
 
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
