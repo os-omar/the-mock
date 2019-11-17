@@ -41,14 +41,14 @@
                     <span class=" error-message-2 pr-1"><strong>"method"</strong> is required and it must be a string
                         type.</span>
                     <span class=" error-message-3 pr-1">this <strong>"method"</strong> can't have a
-                        <strong>"reqBody"</strong>.</span>
+                        <strong>"reqBody"</strong>. Remove <strong>"reqBody"</strong> to proceed.</span>
                 </div>
                 <form action="/r/create" method="post" class="form-inline">
                     <div class="form-group">
                         <input type="hidden" name="pathId" value="<%= pathId %>" />
 
                         <textarea class="form-control" id="create-new-resource" rows="17" cols="50" name="jsonResource">
-                                    {"method": "POST","headers": {"authorization": "Bearer fake-jwt"},
+                                    {"method": "POST","headers": {},
                                     "reqBody": {},
                                     "success": {"statusCode": "200","resBody": []},
                                     "error": {"statusCode": "500","resBody": {}}}
