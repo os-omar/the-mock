@@ -1,4 +1,4 @@
-# The-Mock [![](https://badge.fury.io/js/the-mock.svg)](http://badge.fury.io/js/the-mock)
+# The-Mock [![](https://badge.fury.io/js/the-mock.svg)](http://badge.fury.io/js/the-mock) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/omarsalim1992/the-mock/tree/master/LICENSE)
 
 * Create & Delete REST API End-Points dynamically from a deployed the-mock server.
 * First mock server where mock data are stored in NoSQL "MongoDB" Database and not locally, 
