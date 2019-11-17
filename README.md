@@ -20,7 +20,7 @@ thus these mock data are created once and can be shared across all Front-End dev
   * [Create a path](#create-a-path)
   * [Create a resource](#create-a-resource)
 - [How to achieve a Success/Error response](#how-to-achieve-a-successerror-response)
-  * [Examples](#examples)
+  * [Success/Error Examples](#successerror-examples)
 - [License](#license)
 
 ## Installation
@@ -153,7 +153,7 @@ In other words:
 * __Successful Response:__ reqData === dbData.
 * __Error Response:__ reqData !== dbData.
 
-###  Success/Error Examples
+### Success/Error Examples
 
 | Request Api Call | The-Mock Stored Data | Response | Reason
 | ---- | ---- | ---- | ---- |
