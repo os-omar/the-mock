@@ -3,7 +3,7 @@
 * Create & Delete REST API End-Points dynamically from a deployed the-mock server.
 * First mock server where mock data are stored in NoSQL "MongoDB" Database and not locally, 
 thus these mock data are created once and can be shared across all Front-End development team.
-* It is useful for companies which both B-E & F-E teams works parallelly. 
+* It is useful for companies which both Back-End & Front-End teams work parallelly. 
 * Created for both Front-End developers and testers who needs a quick RESTful API back-end solution, in case there is none.
 * No __coding__ involved, it has a nice UI and with few clicks a mock end-point can be created.
 * It can be deployed to an online server.
