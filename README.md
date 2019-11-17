@@ -161,6 +161,7 @@ In other words:
 | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer blahBlah" } | __path:__ /api/v1.0/posts/1<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer fake-jwt" } | __error__ | request __path__ should be __/posts/1__<br /> request __headers__ should be __{ "authorization": "Bearer fake-jwt" }__ |
 | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer fake-jwt" } | __path:__ /api/v1.0/posts/2<br /> __method:__ GET<br /> __headers:__ { "authorization": "Bearer fake-jwt" } | __success__ | EXACTLY EQUAL __"==="__ |
 | __path:__ /api/v1.0/posts<br /> __method:__ PUT<br /> __headers:__ { "authorization": "Bearer fake-jwt" }<br /> __body:__ { "title": "The Mock 1", "content": "the easiest way to mock end-points" }| __path:__ /api/v1.0/posts<br /> __method:__ POST<br /> __headers:__ { "authorization": "Bearer fake-jwt" }<br />  __reqBody:__ { "title": "The Mock", "content": "the easiest way to mock end-points" }  | __error__ | request __method__ should be __"POST"__<br /> request __body.title__ should be __"The Mock"__ |
+| __path:__ /api/v1.0/posts?department=GOV&year=1990<br /> __method:__ GET<br /> __headers:__ {} | __path:__ /api/v1.0/posts?department=EDU&year=1992<br /> __method:__ GET<br /> __headers:__ {} | __error__ | request __path query__ should be __?department=EDU&year=1992__ |
 
 ## License
 
